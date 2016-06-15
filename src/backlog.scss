@@ -7,7 +7,7 @@
 //--------------------------------------------------------------------------------------------------
 #mainTitle{
     #copyKey-help{
-        display: none;
+        display: none !important;
     }
 
     .Help-btn{
@@ -49,36 +49,25 @@
     }
 }
 
-.Page--view-project{
+#bodyRight{
+    #wikipagelist{
+        padding: 10px 14px;
 
-    #bodyRight{
-        h4{
-            a.ical{
-                display: none;
-            }
+        li{
+            line-height: 1.5;
+            margin-bottom: 8px;
+            list-style: square inside;
+            padding-left: 1em;
+            text-indent: -1em;
 
-            a.Help-btn{
-                display: none;
-            }
-        }
-
-        .right_content{
-            padding: 10px 12px;
-
-            li{
-                line-height: 1.5;
-                margin-bottom: 5px;
-                list-style: square inside;
-                padding-left: 1em;
-                text-indent: -1em;
-
-                a{
-                    margin-left: -1em;
-                }
+            a{
+                margin-left: -1em;
             }
         }
     }
+}
 
+.Page--view-project{
     #activitiesPlaceholder{
         table{
             td{
@@ -87,6 +76,18 @@
         }
         .updated{
             p:last-child{
+                display: none;
+            }
+        }
+    }
+
+    #bodyRight{
+        h4{
+            a.ical{
+                display: none;
+            }
+
+            a.Help-btn{
                 display: none;
             }
         }
