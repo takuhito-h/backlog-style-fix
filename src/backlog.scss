@@ -5,6 +5,13 @@
 //  backlogを見やすくする
 //
 //--------------------------------------------------------------------------------------------------
+#container{
+    border: 1px solid #ccc;
+    border-width: 0 1px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 #mainTitle{
     #copyKey-help{
         display: none !important;
@@ -19,7 +26,205 @@
     display: none;
 }
 
+.Page--view-issue{
+    #bodyLeft{
+        #issuecard{
+            .summary{
+                font-size: 156%;
+                padding: 16px 0px 10px;
+            }
+
+            .desc .loom{
+                margin-left: 1em;
+            }
+
+            .attach{
+                ul{
+                    li{
+                        font-size: 14px;
+                        margin-bottom: 6px;
+                    }
+                }
+            }
+        }
+
+        #parentChildIssueCard .childIssues .childIssuesTable{
+            thead{
+                th{
+                    &:nth-last-child(3){
+                        display: none;
+                    }
+
+                    &:nth-last-child(4){
+                        display: none;
+                    }
+                }
+            }
+
+            tbody{
+                tr{
+                    &:hover{
+                        .c_copy{
+                            img{
+                                visibility: visible;
+                            }
+                        }
+                    }
+
+                    td{
+                        line-height: 1.6;
+                        font-size: 13px;
+                    }
+
+                    .c_summary{
+                        padding: 10px 0px 10px 10px;
+                    }
+
+                    .c_copy{
+                        img{
+                            visibility: hidden;
+                        }
+                    }
+
+                    .c_assigner{
+                        width: 18%;
+                    }
+
+                    .c_estimatedHours{
+                        display: none;
+                    }
+
+                    .c_actualHours{
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .comment-section{
+            .comment-header{
+                .comment-header-overview{
+                    width: 91%;
+                }
+
+                .created{
+                    float: right;
+                    margin-top: 6px;
+                }
+            }
+        }
+
+        .input{
+            textarea{
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+
+        .radio{
+            font-size: 13px;
+
+            > div{
+                margin-bottom: 2px;
+            }
+        }
+    }
+}
+
 .Page--find-issue{
+    .cond .title{
+        a#create-short-url{
+            display: none;
+        }
+    }
+
+    .findIssueSimpleTable{
+        .lbl,
+        .items{
+            font-size: 13px;
+        }
+    }
+
+    .pager{
+        margin-top: 10px;
+
+        td{
+            text-align: center;
+
+            a[data-bind^="text"]{
+                border: 1px solid #ccc;
+                padding: 5px 9px;
+                display: inline-block;
+                font-size: 13px;
+            }
+
+            .pager-prev{
+                border: 1px solid #ccc;
+                padding: 5px 7px;
+                display: inline-block;
+                font-size: 13px;
+                margin-right: -7px;
+            }
+
+            .pager-next{
+                border: 1px solid #ccc;
+                padding: 5px 7px;
+                display: inline-block;
+                font-size: 13px;
+                margin-left: -11px;
+            }
+        }
+    }
+
+    #resultBody{
+        .view{
+            th{
+                &:first-child{
+                    border-left: 1px solid #999;
+                }
+            }
+
+            td{
+                font-size: 100%;
+                padding: 12px 5px;
+
+                &.chevron{
+                    border-left: 1px solid #ccc;
+                }
+
+                &.title{
+                    padding: 12px 10px;
+                }
+
+                &.user{
+                    text-align: center;
+                }
+
+                &.status{
+                    text-align: center;
+
+                    .issue-status-1,
+                    .issue-status-2,
+                    .issue-status-3,
+                    .issue-status-4{
+                        display: inline-block;
+                    }
+                }
+
+                &.user{
+                    img.user{
+                        vertical-align: -4px;
+                        margin-right: 6px;
+                    }
+                }
+
+                .childIssueSummary{
+                    right: 0;
+                }
+            }
+        }
+    }
+
     .pager{
         &:first-child{
             td:first-child{
@@ -54,14 +259,29 @@
         padding: 10px 14px;
 
         li{
-            line-height: 1.5;
-            margin-bottom: 8px;
+            font-size: 13px;
+            line-height: 1.7;
+            margin-bottom: 4px;
             list-style: square inside;
             padding-left: 1em;
             text-indent: -1em;
 
             a{
                 margin-left: -1em;
+            }
+        }
+    }
+}
+
+.Page--view-wiki{
+    #bodyLeft{
+        #bodyLeftInner{
+            .otherOperationsToggle{
+                display: none;
+            }
+
+            .editer{
+                display: none;
             }
         }
     }
@@ -74,6 +294,7 @@
                 padding: 10px 5px;
             }
         }
+
         .updated{
             p:last-child{
                 display: none;
@@ -81,8 +302,24 @@
         }
     }
 
+    #bodyLeft{
+        #bodyLeftInner{
+            h4{
+                display: none;
+            }
+        }
+    }
+
     #bodyRight{
         h4{
+            &:last-of-type{
+                display: none;
+            }
+
+            &:nth-last-of-type(1){
+                display: none;
+            }
+
             a.ical{
                 display: none;
             }
@@ -90,6 +327,16 @@
             a.Help-btn{
                 display: none;
             }
+        }
+
+        .right_content{
+            &:nth-last-of-type(1){
+                display: none;
+            }
+        }
+
+        .user_content{
+            display: none;
         }
     }
 }
@@ -100,7 +347,7 @@
 
     h1{
         padding-bottom: 0.3em;
-        font-size: 2.25em;
+        font-size: 2em;
         line-height: 1.2;
         margin-bottom: 0.8em;
     }
