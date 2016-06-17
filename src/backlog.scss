@@ -367,6 +367,25 @@
             .editer{
                 display: none;
             }
+
+            #wikicard{
+                word-break: break-all;
+
+                table{
+                    display: block;
+                    width: 100%;
+                    max-width: 100%;
+                    overflow: auto;
+                    border-collapse: collapse;
+                    word-break: keep-all;
+                    border: none !important;
+
+                    th,
+                    td{
+                        border: 1px solid #bdba9d;
+                    }
+                }
+            }
         }
     }
 }
@@ -457,6 +476,11 @@
         font-size: 2em;
         line-height: 1.2;
         margin-bottom: 0.8em;
+    }
+
+    h2{
+        font-size: 1.4em;
+        line-height: 1.225;
     }
 
     pre.loom_code{
