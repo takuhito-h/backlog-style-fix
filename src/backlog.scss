@@ -220,6 +220,14 @@
 
     #resultBody{
         .view{
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            overflow: auto;
+            border-collapse: collapse;
+            word-break: keep-all;
+            border: none !important;
+
             th{
                 &:first-child{
                     border-left: 1px solid #999;
