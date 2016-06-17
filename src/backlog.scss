@@ -677,7 +677,20 @@
     }
 
     blockquote{
+        background-color: rgba(255,255,255,0.6);
+        border: none;
+        margin-bottom: 16px;
         padding: 0.8em;
+        overflow: auto;
+        font-size: 100%;
+        line-height: 1.6;
+        word-wrap: normal;
+
+        p{
+            overflow: visible;
+            word-wrap: normal;
+            line-height: inherit;
+        }
     }
 }
 
