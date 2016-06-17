@@ -13,6 +13,10 @@
 }
 
 #mainTitle{
+    font-size: 1.7em;
+    padding-bottom: 8px;
+    margin-bottom: 0.6em;
+
     #copyKey-help{
         display: none !important;
     }
@@ -28,14 +32,39 @@
 
 .Page--view-issue{
     #bodyLeft{
+        .subMenu{
+            display: none;
+        }
+
+        .editMenu{
+            .copyIssueButton{
+                display: none;
+            }
+        }
+
         #issuecard{
+            .date{
+                span{
+                    &:first-child{
+                        display: none;
+                    }
+                }
+            }
+
             .summary{
                 font-size: 156%;
+                line-height: 1.6;
                 padding: 16px 0px 10px;
             }
 
-            .desc .loom{
-                margin-left: 1em;
+            .desc{
+                h5.label{
+                    display: none;
+                }
+
+                .loom{
+                    margin-left: 1em;
+                }
             }
 
             .attach{
@@ -72,7 +101,7 @@
                     }
 
                     td{
-                        line-height: 1.6;
+                        line-height: 1.7;
                         font-size: 13px;
                     }
 
@@ -101,10 +130,23 @@
             }
         }
 
+        #parentChildIssueCard{
+            margin-top: 25px;
+
+            #childIssuesMenu{
+                margin: 0 0 7px;
+            }
+        }
+
         .comment-section{
             .comment-header{
                 .comment-header-overview{
                     width: 91%;
+
+                    .comment-user-name{
+                        font-size: 14px;
+                        vertical-align: -3px;
+                    }
                 }
 
                 .created{
@@ -276,6 +318,48 @@
 .Page--view-wiki{
     #bodyLeft{
         #bodyLeftInner{
+            position: relative;
+
+            #mainTitle{
+                font-size: 2.2em;
+                padding-bottom: 10px;
+                margin-bottom: 0.4em;
+
+                .starBlock{
+                    img{
+                        vertical-align: -2px;
+                    }
+                }
+            }
+
+            .newWikiButton{
+                position: absolute;
+                right: 0;
+                top: 0;
+                color: #333;
+                font-size: 12px;
+                padding: 10px;
+                background-image: url(../images/common/icons/ico_new.png), linear-gradient(#fcfcfc, #eee);
+                border: 1px solid #d5d5d5;
+                border-radius: 3px;
+
+                &:before{
+                    content: url(https://assets.backlog.jp/R20160517/images/common/icons/ico_new.png);
+                    position: relative;
+                    top: 4px;
+                    margin-right: 6px;
+                }
+
+                &:hover{
+                    background-image: linear-gradient(#eee, #ddd);
+                    border-color: #ccc;
+
+                    span{
+                        text-decoration: none;
+                    }
+                }
+            }
+
             .otherOperationsToggle{
                 display: none;
             }
@@ -304,8 +388,31 @@
 
     #bodyLeft{
         #bodyLeftInner{
+            .submenu{
+                margin-bottom: 0.4rem;
+                margin-top: 0.4rem
+            }
+
             h4{
                 display: none;
+            }
+
+            table{
+                td{
+                    padding: 12px 5px;
+
+                    &.key a{
+                        padding-top: 3px;
+                    }
+
+                    &.user{
+                        padding-top: 7px;
+                    }
+
+                    &.desc{
+                        width: 48%;
+                    }
+                }
             }
         }
     }
