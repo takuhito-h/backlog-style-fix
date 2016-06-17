@@ -46,6 +46,26 @@
     }
 }
 
+#hello{
+    span:last-child{
+        display: none;
+    }
+}
+
+#footer{
+    .Pagetop{
+        margin-bottom: 0;
+    }
+
+    #copyright{
+        display: none;
+    }
+
+    #report{
+        display: none;
+    }
+}
+
 #rss{
     display: none;
 }
@@ -171,7 +191,7 @@
         }
 
         #parentChildIssueCard{
-            margin-top: 25px;
+            margin: 5px 0 25px;
 
             #childIssuesMenu{
                 margin: 0 0 7px;
@@ -179,6 +199,10 @@
         }
 
         .comment-section{
+            #viewSwitch{
+                display: none;
+            }
+
             .comment-expand-control{
                 display: none;
             }
@@ -283,6 +307,7 @@
         .lbl,
         .items{
             font-size: 13px;
+            line-height: 1.8;
         }
     }
 
@@ -514,6 +539,8 @@
     }
 
     #bodyLeft{
+        display: none;
+
         #bodyLeftInner{
             .submenu{
                 margin-bottom: 0.4rem;
@@ -545,12 +572,19 @@
     }
 
     #bodyRight{
+        float: none;
+        width: auto;
+
         h4{
             &:last-of-type{
                 display: none;
             }
 
             &:nth-last-of-type(1){
+                display: none;
+            }
+
+            &:nth-last-of-type(2){
                 display: none;
             }
 
@@ -564,8 +598,53 @@
         }
 
         .right_content{
+            &:nth-last-of-type(2){
+                display: none;
+            }
+
             &:nth-last-of-type(1){
                 display: none;
+            }
+
+            #milestones{
+                overflow: hidden;
+
+                &:after{
+                    content: "";
+                    clear: both;
+                }
+
+                .milestone{
+                    float: left;
+                    width: 49.5%;
+
+                    &:nth-child(even){
+                        margin-right: 1%;
+                    }
+
+                    .ttl{
+                        margin-top: 0;
+                    }
+
+                    .graph2{
+                        float: none;
+                        width: auto;
+                    }
+
+                    &:hover{
+                        .milestone-edit{
+                            display: inline;
+                        }
+                    }
+
+                    .milestone-edit{
+                        display: none;
+                    }
+
+                    .milestone-date{
+                        margin-top: 0;
+                    }
+                }
             }
         }
 
@@ -596,6 +675,10 @@
         background-color: #f7f7f7;
         border-radius: 3px;
     }
+
+    blockquote{
+        padding: 0.8em;
+    }
 }
 
 .Page--add-issue{
@@ -612,6 +695,15 @@
                 padding: 6px 8px;
                 line-height: 1.6;
                 font-size: 1.1em;
+            }
+        }
+
+        .properties{
+            table{
+                th{
+                    font-weight: bold;
+                    font-size: 1.02em;
+                }
             }
         }
 
