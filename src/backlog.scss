@@ -26,12 +26,36 @@
     }
 }
 
+#contents{
+    .Guide-link{
+        display: none;
+    }
+
+    #issueList{
+        font-size: 1em;
+        line-height: 1.6;
+    }
+
+    #projects #projectList li{
+        font-size: 1em;
+        line-height: 1.6;
+
+        a span.Project-icon{
+            padding: 7px 0 7px 10px;
+        }
+    }
+}
+
 #rss{
     display: none;
 }
 
 .Page--view-issue{
     #bodyLeft{
+        .left_content{
+            padding-top: 6px;
+        }
+
         .subMenu{
             display: none;
         }
@@ -55,6 +79,22 @@
                 font-size: 165%;
                 line-height: 1.6;
                 padding: 16px 0px 10px;
+            }
+
+            .properties{
+                font-size: 1em;
+
+                table{
+                    th{
+                        text-align: right;
+                        font-weight: bold;
+
+                        &:after{
+                            content: ":";
+                            margin-left: 5px;
+                        }
+                    }
+                }
             }
 
             .desc{
@@ -139,9 +179,29 @@
         }
 
         .comment-section{
+            .comment-expand-control{
+                display: none;
+            }
+
             .comment-header{
+                &:hover{
+                    .starBlock{
+                        display: inline;
+                    }
+                }
+
+                .starBlock{
+                    display: none;
+                }
+
+                .comment-header-menu{
+                    .Top-link{
+                        display: none;
+                    }
+                }
+
                 .comment-header-overview{
-                    width: 91%;
+                    width: 92.5%;
 
                     .comment-user-name{
                         font-size: 14px;
@@ -157,6 +217,16 @@
         }
 
         .input{
+            #commentLabel{
+                display: none !important;
+            }
+
+            #notifiedUsersLeft{
+                .NotifyHelp{
+                    display: none;
+                }
+            }
+
             textarea{
                 font-size: 14px;
                 padding: 8px;
@@ -168,6 +238,35 @@
 
             > div{
                 margin-bottom: 2px;
+            }
+        }
+    }
+
+    #bodyRight{
+        h4{
+            &:last-of-type{
+                display: none;
+            }
+
+            .Help-btn{
+                display: none;
+            }
+        }
+
+        .right_content{
+            &:last-of-type{
+                display: none;
+            }
+
+            #notifiedUsers{
+                .NotifyHelp{
+                    display: none;
+                }
+            }
+
+            .ttl{
+                font-size: 13px;
+                padding: 7px 0;
             }
         }
     }
