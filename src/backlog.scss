@@ -52,7 +52,7 @@
             }
 
             .summary{
-                font-size: 156%;
+                font-size: 165%;
                 line-height: 1.6;
                 padding: 16px 0px 10px;
             }
@@ -391,6 +391,7 @@
                     th,
                     td{
                         border: 1px solid #bdba9d;
+                        padding: 6px 10px !important;
                     }
                 }
             }
@@ -495,5 +496,53 @@
         line-height: 1.45;
         background-color: #f7f7f7;
         border-radius: 3px;
+    }
+}
+
+.Page--add-issue{
+    #editissuecard{
+        table.layout{
+            input{
+                padding: 16px 8px;
+                line-height: 1.6;
+                font-size: 1.1em;
+                height: 1.1em;
+            }
+
+            textarea{
+                padding: 6px 8px;
+                line-height: 1.6;
+                font-size: 1.1em;
+            }
+        }
+
+        #issue_properties{
+            #startDateCalendar,
+            #limitDateCalendar{
+                span:last-child{
+                    display: none;
+                }
+            }
+
+        }
+    }
+
+    .upload-area{
+        margin: 0;
+        padding-bottom: 0;
+
+        #add-drag-area{
+            display: none !important;
+        }
+
+        .problem-area{
+            display: none;
+        }
+    }
+
+    .submitbtn{
+        &[value="プレビュー"]{
+            display: none;
+        }
     }
 }
