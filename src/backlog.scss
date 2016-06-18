@@ -93,23 +93,22 @@
         }
     }
 
-    .Board.Primary{
-        float: none;
-        width: 100%;
+    #board-wrap{
+        margin-top: 20px;
 
-        .Board-item{
-            box-sizing: border-box;
-            float: left;
-            width: 49%;
+        .Board.Primary{
+            float: none;
+            width: 98%;
+            margin: 0 auto;
+
+            .Board-item{
+                box-sizing: border-box;
+            }
         }
 
-        #projects{
-            margin-right: 1.5%;
+        .Board.Secondary{
+            display: none;
         }
-    }
-
-    .Board.Secondary{
-        display: none;
     }
 }
 
