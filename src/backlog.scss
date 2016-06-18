@@ -5,11 +5,59 @@
 //  backlogを見やすくする
 //
 //--------------------------------------------------------------------------------------------------
+#global{
+    position: relative;
+
+    #globalRecentIssueLink{
+        display: none;
+    }
+
+    #globalRecentWikiLink{
+        display: none;
+    }
+
+    .Issue-menu{
+        .Issue-search{
+            display: none;
+        }
+    }
+
+    .GlobalSearchBox{
+        display: none;
+    }
+}
+
+#scroll-issue{
+    top: 0 !important;
+}
+
+#projectNav{
+    ul li a{
+        font-size: 1em;
+        line-height: 48px;
+        min-height: 48px;
+    }
+
+    .Search-form{
+        margin: 6px 0 5px;
+
+        .Search-box{
+            padding: 0.5em 6px 0.5em 11px;
+            width: 275px;
+        }
+
+        .SearchBox-btn{
+            height: 31px;
+        }
+    }
+}
+
 #container{
     border: 1px solid #ccc;
     border-width: 0 1px;
     max-width: 1200px;
     margin: 0 auto;
+    padding-top: 0;
 }
 
 #mainTitle{
@@ -191,7 +239,7 @@
         }
 
         #parentChildIssueCard{
-            margin: 5px 0 25px;
+            margin: 25px 0 25px;
 
             #childIssuesMenu{
                 margin: 0 0 7px;
@@ -208,6 +256,8 @@
             }
 
             .comment-header{
+                position: static;
+
                 &:hover{
                     .starBlock{
                         display: inline;
@@ -225,17 +275,27 @@
                 }
 
                 .comment-header-overview{
-                    width: 92.5%;
+                    .comment-collapse-inner{
+                        position: relative;
+                        display: inline-block;
 
-                    .comment-user-name{
-                        font-size: 14px;
-                        vertical-align: -3px;
+                        .comment-user-name{
+                            font-size: 13px;
+                            font-weight: bold;
+                            vertical-align: -3px;
+                        }
+
+                        .star-container{
+                            position: absolute;
+                            right: -30px;
+                            top: 0;
+                        }
                     }
                 }
 
                 .created{
                     float: right;
-                    margin-top: 6px;
+                    margin: 6px 0 0 7px;
                 }
             }
         }
@@ -291,6 +351,18 @@
             .ttl{
                 font-size: 13px;
                 padding: 7px 0;
+            }
+
+            #SwitchStatus{
+                .select{
+                    margin: 10px 0;
+
+                    table{
+                        td{
+                            padding-bottom: 7px;
+                        }
+                    }
+                }
             }
         }
     }
@@ -393,7 +465,9 @@
                 }
 
                 .childIssueSummary{
-                    right: 0;
+                    position: static;
+                    text-align: left;
+                    margin-top: 7px;
                 }
             }
         }
@@ -457,7 +531,15 @@
                 padding-bottom: 10px;
                 margin-bottom: 0.4em;
 
+                &:hover{
+                    .starBlock{
+                        display: inline;
+                    }
+                }
+
                 .starBlock{
+                    display: none;
+
                     img{
                         vertical-align: -2px;
                     }
@@ -574,6 +656,7 @@
     #bodyRight{
         float: none;
         width: auto;
+        margin-top: 25px;
 
         h4{
             &:last-of-type{
@@ -598,12 +681,36 @@
         }
 
         .right_content{
+            padding: 15px 9px;
+
             &:nth-last-of-type(2){
                 display: none;
             }
 
             &:nth-last-of-type(1){
                 display: none;
+            }
+
+            .graph_inner{
+                position: relative;
+
+                .graph1{
+                    float: none;
+                    width: auto;
+                }
+
+                span{
+                    margin: 5px 0 7px;
+
+                    .releasenote{
+                        display: none;
+                    }
+                }
+
+                p:last-child{
+                    position: absolute;
+                    bottom: 5px;
+                }
             }
 
             #milestones{
@@ -626,9 +733,21 @@
                         margin-top: 0;
                     }
 
-                    .graph2{
-                        float: none;
-                        width: auto;
+                    .milestone-name{
+                        font-size: 13px;
+                    }
+
+                    .graph_inner{
+                        font-size: 13px;
+
+                        .graph2{
+                            float: none;
+                            width: auto;
+                        }
+
+                        .milestone-date{
+                            margin: 5px 5px 7px 0;
+                        }
                     }
 
                     &:hover{
@@ -677,7 +796,7 @@
     }
 
     blockquote{
-        background-color: rgba(255,255,255,0.6);
+        background-color: rgba(255,255,255,0.9);
         border: none;
         margin-bottom: 16px;
         padding: 0.8em;
@@ -692,11 +811,23 @@
             line-height: inherit;
         }
     }
+
+    a.loom-link-another{
+        background-image: none;
+
+        &:hover{
+            background-image: url(https://assets.backlog.jp/R20160617/shared/img/icon/ico_open_window.png);
+        }
+    }
 }
 
 .Page--add-issue{
     #editissuecard{
         table.layout{
+            th{
+                font-size: 14px;
+            }
+
             input{
                 padding: 16px 8px;
                 line-height: 1.6;
@@ -721,6 +852,11 @@
         }
 
         #issue_properties{
+            > caption{
+                font-size: 1.1em;
+                padding-bottom: 12px;
+            }
+
             #startDateCalendar,
             #limitDateCalendar{
                 span:last-child{
@@ -747,6 +883,55 @@
     .submitbtn{
         &[value="プレビュー"]{
             display: none;
+        }
+    }
+
+    #bodyLeftInner{
+        #AddIssueConfirm{
+            input.submitbtn[value="追加"]{
+                float: none;
+                width: 200px;
+                margin: 25px auto 0;
+                padding: 12px 0;
+                text-align: center;
+                display: block;
+
+                &[tabindex="17"]{
+                    display: none;
+                }
+            }
+
+            #notifiedUsers{
+                .NotifyHelp{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.Page--view-gantt{
+    #cond{
+        margin-bottom: 20px;
+    }
+
+    #gantt_navi_area{
+        padding-bottom: 8px;
+
+        #gantt_navi{
+            display: none;
+        }
+
+        #gantt_navi_right{
+            float: none;
+
+            .gantt_legend{
+                font-size: 1em;
+
+                [class^="issue-status"]{
+                    padding: 4px 8px;
+                }
+            }
         }
     }
 }
