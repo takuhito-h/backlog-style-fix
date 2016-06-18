@@ -92,6 +92,25 @@
             padding: 7px 0 7px 10px;
         }
     }
+
+    .Board.Primary{
+        float: none;
+        width: 100%;
+
+        .Board-item{
+            box-sizing: border-box;
+            float: left;
+            width: 49%;
+        }
+
+        #projects{
+            margin-right: 1.5%;
+        }
+    }
+
+    .Board.Secondary{
+        display: none;
+    }
 }
 
 #hello{
@@ -166,12 +185,22 @@
             }
 
             .desc{
+                &:hover{
+                    .starBlock{
+                        display: inline;
+                    }
+                }
+
                 h5.label{
                     display: none;
                 }
 
                 .loom{
                     margin-left: 1em;
+                }
+
+                .starBlock{
+                    display: none;
                 }
             }
 
@@ -262,6 +291,10 @@
                     .starBlock{
                         display: inline;
                     }
+
+                    .comment-header-menu{
+                        display: block;
+                    }
                 }
 
                 .starBlock{
@@ -269,6 +302,8 @@
                 }
 
                 .comment-header-menu{
+                    display: none;
+
                     .Top-link{
                         display: none;
                     }
